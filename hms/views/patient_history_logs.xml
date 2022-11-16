@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="hms_tree_view_logs" model="ir.ui.view">
+             <field name="name">logs tree</field>
+            <field name="model">hms.log_history</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                        <field name="description" />
+                    <field name="patient"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="hms_form_view_logs" model="ir.ui.view">
+             <field name="name">logsform</field>
+            <field name="model">hms.log_history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+
+
+                        <field name="description" />
+                             <field name="patient"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <record id="hms_action_logs" model="ir.actions.act_window">
+            <field name="name">logs</field>
+            <field name="res_model">hms.log_history</field>
+        </record>
+
+        <menuitem id="logs_hms" name="logs"  parent="patients_hms"  action="hms_action_logs"/>
+
+    </data>
+</odoo>
